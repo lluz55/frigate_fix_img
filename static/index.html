@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<img id=snap />
+<title "Frente Esquerda Snapshot" />
+<script>
+  window.onload = (event) => {
+    fetch('/frente_esquerda_snap')
+      .then(response => response.blob())
+      .then(_ => {
+        const imageEl = document.getElementById("snap");
+        imageEl.src = "/static/frente_esquerda_latest.jpg";
+      });
+  };
+</script>
+<style>
+  img {
+    width: 100%;
+    max-width: max-content;
+  }
+</style>
+
+</html>
